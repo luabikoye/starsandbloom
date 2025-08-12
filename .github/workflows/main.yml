@@ -23,8 +23,5 @@ jobs:
       - name: Validate PHP version
         run: php -v
 
-      - name: Get repo from github
-        run: wget https://github.com/luabikoye/aws/archive/refs/heads/main.zip
-
-      - name: Unzip Project & List Dir
-        run: unzip main.zip && ls aws-main
+      - name: List all files in repo
+        run: ls -la
