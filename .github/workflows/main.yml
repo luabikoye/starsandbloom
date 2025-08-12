@@ -25,3 +25,19 @@ jobs:
 
       - name: List all files in repo
         run: ls -la
+
+      - name: Copy files to remote server
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_PATH: ${{ secrets.REMOTE_PATH }}
+        run: |
+          # Set up SSH key
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H "$REMOTE_HOST" >> ~/.ssh/known_hosts
+
+          # Copy all files
+          scp -r ./* "$REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH"
