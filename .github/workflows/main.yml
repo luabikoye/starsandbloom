@@ -41,7 +41,7 @@ jobs:
 
       - name: COnnect to SSH
         run: |
-          ssh -i "SSH_PRIVATE_KEY $REMOTE_USER@$REMOTE_HOST" 
+          ssh "$REMOTE_USER@$REMOTE_HOST" 
           echo 'Connected to server successfully';
 
       - name: Run SQ UPdate
