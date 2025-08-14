@@ -24,27 +24,27 @@ jobs:
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_PATH: ${{ secrets.REMOTE_PATH }}
-
-          DB_HOST: ${{ secrets.DB_HOST }}
-          DB_USER: ${{ secrets.DB_USER }}
-          DB_PASS: ${{ secrets.DB_PASS }}
-
         run: |
-          # Set up SSH key
           mkdir -p ~/.ssh
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H "$REMOTE_HOST" >> ~/.ssh/known_hosts
 
-          # Copy all files
           scp -r ./* "$REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH"
 
-      - name: COnnect to SSH
+      - name: Connect to remote and run DB update
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
         run: |
-          ssh "$REMOTE_USER@$REMOTE_HOST" 
-          echo 'Connected to server successfully';
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H "$REMOTE_HOST" >> ~/.ssh/known_hosts
 
-      - name: Run SQ UPdate
-        run: |
-          sudo mysql -u root starandblooms < /var/www/html/db_scripts_update.sql
-          echo 'Database has updated';
+          ssh "$REMOTE_USER@$REMOTE_HOST" << 'EOF'
+          echo "Connected to server successfully"
+          sudo mysql -u root starsandbloom < /var/www/html/db_scripts_update.sql
+          echo "Database has been updated"
+          EOF
