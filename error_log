@@ -1,26 +1,2 @@
-[17-May-2022 23:37:59 UTC] PHP Notice:  Undefined variable: msg in /home2/logixcom/public_html/contact.php on line 50
-[17-May-2022 23:37:59 UTC] PHP Notice:  Undefined variable: errmsg in /home2/logixcom/public_html/contact.php on line 51
-[19-May-2022 09:55:36 UTC] PHP Notice:  Undefined variable: msg in /home2/logixcom/public_html/contact.php on line 50
-[19-May-2022 09:55:36 UTC] PHP Notice:  Undefined variable: errmsg in /home2/logixcom/public_html/contact.php on line 51
-[19-May-2022 09:55:49 UTC] PHP Notice:  Undefined variable: msg in /home2/logixcom/public_html/contact.php on line 50
-[19-May-2022 09:55:49 UTC] PHP Notice:  Undefined variable: errmsg in /home2/logixcom/public_html/contact.php on line 51
-[20-May-2022 18:09:44 UTC] PHP Notice:  Undefined variable: msg in /home2/logixcom/public_html/contact.php on line 50
-[20-May-2022 18:09:44 UTC] PHP Notice:  Undefined variable: errmsg in /home2/logixcom/public_html/contact.php on line 51
-[22-May-2022 01:39:27 UTC] PHP Notice:  Undefined variable: msg in /home2/logixcom/public_html/contact.php on line 53
-[22-May-2022 01:39:27 UTC] PHP Notice:  Undefined variable: errmsg in /home2/logixcom/public_html/contact.php on line 54
-[23-May-2022 11:42:10 UTC] PHP Notice:  Undefined variable: msg in /home2/logixcom/public_html/contact.php on line 53
-[23-May-2022 11:42:10 UTC] PHP Notice:  Undefined variable: errmsg in /home2/logixcom/public_html/contact.php on line 54
-[23-May-2022 13:11:19 UTC] PHP Notice:  Undefined variable: msg in /home2/logixcom/public_html/contact.php on line 53
-[23-May-2022 13:11:19 UTC] PHP Notice:  Undefined variable: errmsg in /home2/logixcom/public_html/contact.php on line 54
-[23-May-2022 15:21:38 UTC] PHP Notice:  Undefined variable: msg in /home2/logixcom/public_html/contact.php on line 53
-[23-May-2022 15:21:38 UTC] PHP Notice:  Undefined variable: errmsg in /home2/logixcom/public_html/contact.php on line 54
-[23-May-2022 15:28:12 UTC] PHP Notice:  Undefined variable: msg in /home2/logixcom/public_html/contact.php on line 53
-[23-May-2022 15:28:12 UTC] PHP Notice:  Undefined variable: errmsg in /home2/logixcom/public_html/contact.php on line 54
-[23-May-2022 15:33:36 UTC] PHP Notice:  Undefined variable: msg in /home2/logixcom/public_html/contact.php on line 53
-[23-May-2022 15:33:36 UTC] PHP Notice:  Undefined variable: errmsg in /home2/logixcom/public_html/contact.php on line 54
-[24-May-2022 16:40:04 UTC] PHP Notice:  Undefined variable: msg in /home2/logixcom/public_html/contact.php on line 53
-[24-May-2022 16:40:04 UTC] PHP Notice:  Undefined variable: errmsg in /home2/logixcom/public_html/contact.php on line 54
-[25-May-2022 09:10:59 UTC] PHP Notice:  Undefined variable: msg in /home2/logixcom/public_html/contact.php on line 53
-[25-May-2022 09:11:00 UTC] PHP Notice:  Undefined variable: errmsg in /home2/logixcom/public_html/contact.php on line 54
-[25-May-2022 09:13:30 UTC] PHP Notice:  Undefined variable: msg in /home2/logixcom/public_html/contact.php on line 53
-[25-May-2022 09:13:30 UTC] PHP Notice:  Undefined variable: errmsg in /home2/logixcom/public_html/contact.php on line 54
+[16-Dec-2023 02:03:26 UTC] PHP Warning:  file_get_contents(/tmp/index.php): failed to open stream: No such file or directory in /home/starsan/public_html/l.php on line 2
+[16-Dec-2023 02:03:26 UTC] PHP Warning:  file_get_contents(/tmp/.htaccess): failed to open stream: No such file or directory in /home/starsan/public_html/l.php on line 5
