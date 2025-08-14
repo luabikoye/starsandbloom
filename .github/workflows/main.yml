@@ -24,6 +24,11 @@ jobs:
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_PATH: ${{ secrets.REMOTE_PATH }}
+
+          DB_HOST: ${{ secrets.DB_HOST }}
+          DB_USER: ${{ secrets.DB_USER }}
+          DB_PASS: ${{ secrets.DB_PASS }}
+
         run: |
           # Set up SSH key
           mkdir -p ~/.ssh
@@ -33,3 +38,11 @@ jobs:
 
           # Copy all files
           scp -r ./* "$REMOTE_USER@$REMOTE_HOST:$REMOTE_PATH"
+
+      - name: Update SQL Data
+        run: |
+          ssh -i "SSH_PRIVATE_KEY $REMOTE_USER@$REMOTE_HOST" 
+          echo 'Connected to server successfully';
+
+          sudo mysql -u root starandblooms < /var/www/html/db_scripts_update.sql
+          echo 'Database has updated';
